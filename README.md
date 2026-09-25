@@ -1,4 +1,4 @@
-# 🔓 Week 3 — Password Cracking with JTR & NetworkWalks Tools
+# 🔓 Password Cracking with JTR & NetworkWalks Tools
 
 **Three locked PDFs, two toolchains, and a wordlist that had to get a lot bigger before it earned its keep.**
 
