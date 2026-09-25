@@ -13,7 +13,7 @@
 
 ## 📌 Continuity Note
 
-This one picks up right where the last repo left off — Week 3 of the Cybersecurity & Ethical Hacking Program at Networkwalks. Also part of this series:
+This one picks up right where the last repo left off; Week 3 of the Cybersecurity & Ethical Hacking Program at Networkwalks. Also part of this series:
 
 - **Week 1:** [Kali-Linux-Lab-Setup-in-Virtualbox](https://github.com/suvayanghosh/Kali-Linux-Lab-Setup-in-Virtualbox)
 - **Week 2:** [Footprinting-Reconnaissance-Lab](https://github.com/suvayanghosh/Footprinting-Reconnaissance-Lab)
@@ -38,18 +38,16 @@ This one picks up right where the last repo left off — Week 3 of the Cybersecu
 
 ## 📖 Backstory
 
-Week 3 handed over three separate locked PDFs and the same brief, three times over: extract the hash, crack the password, capture the flag inside. And to make sure the lesson actually landed, I had to do all three twice — once with a proper installed toolchain, once with nothing but a browser tab.
+Week 3 handed over three separate locked PDFs and the same brief, three times over: extract the hash, crack the password, capture the flag inside. And to make sure the lesson actually landed, I had to do all three twice - once with a proper installed toolchain, once with nothing but a browser tab.
 
-**Module 1** goes the traditional route — John the Ripper, driven through the Johnny GUI, hash pulled out with a third-party web extractor first. **Module 2** does the exact same three files using NetworkWalks' own in-browser Hash Calculator and Password Cracker, zero installation required. Two of the three passwords fell instantly either way. The third one had opinions about that, and made the browser tool work for it.
-
-Every screenshot below is from my own run, mapped file by file, tool by tool.
+**Module 1** goes the traditional route - John the Ripper, driven through the Johnny GUI and the hash pulled out with a third-party web extractor first. **Module 2** does the exact same three files using NetworkWalks' own in-browser Hash Calculator and Password Cracker; zero installation was required. Two of the three passwords fell instantly either way. The third one had opinions about that, and made the browser tool work for it.
 
 ---
 
 ## 🎯 What I Set Out to Do
 
 - Extract the crackable `$pdf$...` hash from three separate locked PDFs and recover each password using **John the Ripper**, driven through the **Johnny GUI**.
-- Repeat the same three recoveries using **NetworkWalks' Hash Calculator** and **Password Cracker** — browser-based, zero installation.
+- Repeat the same three recoveries using **NetworkWalks' Hash Calculator** and **Password Cracker** which was browser-based, zero installation.
 - Capture the flag hidden inside each unlocked PDF as proof of a successful crack.
 - Actually notice when a wordlist isn't cutting it, instead of just declaring defeat at "Access Denied."
 
@@ -61,7 +59,7 @@ Every screenshot below is from my own run, mapped file by file, tool by tool.
 | --- | --- |
 | `My Locked PDF1.pdf`, `My Locked PDF2.pdf`, `My Locked PDF3.pdf` | Provided directly by Networkwalks Academy as designated training files for this lab exercise |
 
-⚠️ **Disclaimer:** All three files cracked in this repo were handed out specifically for this exercise — none of it is real data, and no other file, account or system was touched. Password cracking is genuinely useful to understand as a security professional, but it's also exactly the kind of technique that needs a very clear "yes, you're allowed to do this" before you point it at anything. Here, that permission was built into the assignment.
+⚠️ **Disclaimer:** All three files cracked in this repo were handed out specifically for this exercise, none of it is real data; and no other file, account or system was touched. Password cracking is genuinely useful to understand as a security professional, but it's also exactly the kind of technique that needs a very clear "yes, you're allowed to do this" before you point it at anything. Here, that permission was built into the assignment.
 
 ---
 
@@ -70,7 +68,7 @@ Every screenshot below is from my own run, mapped file by file, tool by tool.
 | Tool | Purpose |
 | --- | --- |
 | 🖥️ Windows | Operating system used for both modules |
-| 🔓 John the Ripper (JTR) | Core CLI password-cracking engine — Unix in origin, now cross-platform |
+| 🔓 John the Ripper (JTR) | Core CLI password-cracking engine  |
 | 🖱️ Johnny GUI | Point-and-click front end for JTR, so no commands had to be typed by hand |
 | 🔎 Online PDF Hash Extractor | Pulled the crackable `$pdf$...` hash out of each locked file ahead of the JTR run |
 | 🧮 NetworkWalks Hash Calculator | Browser-based hash extraction, entirely client-side, zero install |
@@ -82,7 +80,7 @@ Every screenshot below is from my own run, mapped file by file, tool by tool.
 
 ### Module 1 — Password Cracking with JTR & Johnny GUI (W3-PM1)
 
-The "install things and mean it" route. Johnny was pointed at `john.exe` once, then reused for all three files — extract a hash with the online tool, load it into Johnny, start the attack, catch the flag.
+The "install things and mean it" route. Johnny was pointed at `john.exe` once, then reused for all three files - extract a hash with the online tool, load it into Johnny, start the attack, catch the flag.
 
 #### 📄 PDF 1
 
@@ -90,7 +88,7 @@ Uploaded `My Locked PDF1.pdf` to the online hash extractor and pulled out its `$
 
 ![Hash extracted for PDF 1](working-screenshots/Screenshot-1.png)
 
-Loaded the hash into Johnny and started the attack. Cracked almost immediately — recovered password: **`good-luck`**.
+Loaded the hash into Johnny and started the attack. Cracked almost immediately, recovered password: **`good-luck`**.
 
 ![Johnny cracks PDF 1](working-screenshots/Screenshot-2.png)
 
@@ -104,7 +102,7 @@ Same process, different file. Extracted the hash for `My Locked PDF2.pdf`.
 
 ![Hash extracted for PDF 2](working-screenshots/Screenshot-4.png)
 
-Johnny made short work of it — recovered password: **`password1`**.
+Johnny made short work of it. Recovered password: **`password1`**.
 
 ![Johnny cracks PDF 2](working-screenshots/Screenshot-5.png)
 
@@ -118,7 +116,7 @@ Hash extracted for `My Locked PDF3.pdf`.
 
 ![Hash extracted for PDF 3](working-screenshots/Screenshot-7.png)
 
-Cracked by Johnny — recovered password: **`1qaz2wsx`**.
+Cracked by Johnny, recovered password: **`1qaz2wsx`**.
 
 ![Johnny cracks PDF 3](working-screenshots/Screenshot-8.png)
 
@@ -134,7 +132,7 @@ All three cracked cleanly through JTR + Johnny, no drama, no repeat attempts nee
 
 Same three files, zero installation this time. This is also where things got mildly interesting.
 
-#### 📄 PDF 1 — the one that fought back
+#### 📄 PDF 1
 
 Extracted the hash for `My Locked PDF1.pdf` using NetworkWalks' Hash Calculator.
 
@@ -148,19 +146,19 @@ Second attempt: uploaded a bigger custom wordlist (`fasttrack.txt`, 221 words). 
 
 ![Second attempt fails on fasttrack.txt](working-screenshots/Screenshot-12.png)
 
-Third attempt: uploaded a much larger wordlist (`JTR_default_password.txt`, 3,556 words). This time it landed a match at 3,456/3,556 — recovered password: **`good-luck`**, matching exactly what Johnny found in Module 1.
+Third attempt: uploaded a much larger wordlist (`JTR_default_password.txt`, 3,556 words). This time it landed a match at 3,456/3,556. Recovered password: **`good-luck`**, matching exactly what Johnny found in Module 1.
 
 ![Third attempt finally cracks PDF 1](working-screenshots/Screenshot-13.png)
 
 #### 📄 PDF 2
 
-Hash extracted, pasted into the Password Cracker, ran against the built-in 100-word list. Matched almost immediately at attempt 91/100 — recovered password: **`password1`**.
+Hash extracted, pasted into the Password Cracker, ran against the built-in 100-word list. Matched almost immediately at attempt 91/100. Recovered password: **`password1`**.
 
 ![Password Cracker matches PDF 2](working-screenshots/Screenshot-14.png)
 
 #### 📄 PDF 3
 
-Same built-in 100-word list, matched even faster this time at attempt 35/100 — recovered password: **`1qaz2wsx`**.
+Same built-in 100-word list, matched even faster this time at attempt 35/100. Recovered password: **`1qaz2wsx`**.
 
 ![Password Cracker matches PDF 3](working-screenshots/Screenshot-15.png)
 
@@ -174,25 +172,25 @@ Same built-in 100-word list, matched even faster this time at attempt 35/100 —
 | PDF 2 | Cracked on the first attempt | Cracked on the built-in 100-word list, matched at 91/100 | `password1` | `nw{networkwalks_persistence_jtr_270521}` |
 | PDF 3 | Cracked on the first attempt | Cracked on the built-in 100-word list, matched at 35/100 | `1qaz2wsx` | `nw{networkwalks_flag_260821_1}` |
 
-Same three passwords, recovered twice over through two completely different toolchains — the only real difference was how many wordlists PDF 1 needed before the browser tool caught up with Johnny.
+Same three passwords, but recovered twice over through two completely different toolchains. The only real difference was how many wordlists PDF 1 needed before the browser tool caught up with Johnny.
 
 ---
 
 ## 💡 Lessons Learned
 
-**Not all "weak" passwords are equally weak.** `password1` and `1qaz2wsx` fell to a 100-word list without a fight. `good-luck` didn't — it took a wordlist over 35 times larger before the same tool found it.
+**Not all "weak" passwords are equally weak.** `password1` and `1qaz2wsx` fell to a 100-word list without a fight. `good-luck` didn't. It took a wordlist over 35 times larger before the same tool found it.
 
 **A tool is only as good as the list behind it.** JTR + Johnny cracked all three files without needing any extra configuration, while the browser-based cracker needed a manual wordlist upgrade to catch up on the harder password. Same technique, different default ammunition.
 
 **"Access Denied" isn't the end of the story.** It would've been easy to stop at the first exhausted wordlist and call PDF 1 uncrackable. It just needed a bigger dictionary, not a different approach.
 
-**Hash extraction is still its own step.** Neither JTR nor the NetworkWalks Password Cracker can touch a locked PDF directly — every single one of the six crack attempts started with pulling a hash out first.
+**Hash extraction is still its own step.** Neither JTR nor the NetworkWalks Password Cracker can touch a locked PDF directly. Every single one of the six crack attempts started with pulling a hash out first.
 
 ---
 
 ## 🔐 Ethical Use Notice
 
-All three files cracked in this repository were provided directly by Networkwalks Academy for this exercise — not sourced, guessed at, or taken from anyone's real account. The point of this lab is to see, first-hand, how quickly (or how stubbornly) a password gets recovered depending on the wordlist behind the attack. Please don't point either of these toolchains at a file, account or system you don't own or have explicit permission to test.
+All three files cracked in this repository were provided directly by Networkwalks Academy for this exercise; not sourced, guessed at, or taken from anyone's real account. The point of this lab is to see, first-hand, how quickly (or how stubbornly) a password gets recovered depending on the wordlist behind the attack. Please don't point either of these toolchains at a file, account or system you don't own or have explicit permission to test.
 
 ---
 
@@ -208,7 +206,7 @@ All three files cracked in this repository were provided directly by Networkwalk
 
 ## 👤 Author
 
-**Suvayan Ghosh** — Cybersecurity Analyst | Networkwalks Internship, Batch B083D
+**Suvayan Ghosh** - Cyber Security Intern | Networkwalks 
 
 **LinkedIn:** <https://www.linkedin.com/in/suvayanghosh/>
 
